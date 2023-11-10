@@ -7,8 +7,8 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def main():
   retro.data.Integrations.add_custom_path(SCRIPT_DIR)
-  print("Red exists: ", "Red-GameBoy" in retro.data.list_games(inttype=retro.data.Integrations.ALL))
-  env = retro.make("Red-GameBoy", inttype=retro.data.Integrations.ALL, render_mode="rgb_array")
+  print("Emerald exists: ", "Emerald-GBAdvance" in retro.data.list_games(inttype=retro.data.Integrations.ALL))
+  env = retro.make("Emerald-GBAdvance", inttype=retro.data.Integrations.ALL, render_mode="rgb_array")
   env.reset()
 
   n_steps = 1000
