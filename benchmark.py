@@ -22,13 +22,13 @@ def benchmark_function(func, iterations=1000, warmup=10):
     print(f"Warming up for {warmup} iterations...")
     for _ in range(warmup):
         func()
-    
+
     print(f"Benchmarking for {iterations} iterations...")
     start_time = time.time()
     for _ in range(iterations):
         func()
     end_time = time.time()
-    
+
     it_per_sec = iterations / (end_time - start_time)
     return it_per_sec
 
@@ -42,7 +42,7 @@ def main(args):
 
     env.reset()
     steps_per_sec = benchmark_function(env.em.step, args.iterations)
-    print(f"mGBA FPS: {steps_per_sec}")
+    print(f"FPS: {steps_per_sec}")
     print("---")
 
     env.reset()
@@ -52,4 +52,4 @@ def main(args):
 
 if __name__ == "__main__":
     args = parse_args()
-    main(args)    
+    main(args)
